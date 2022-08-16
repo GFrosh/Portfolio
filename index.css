@@ -1,0 +1,64 @@
+html {
+	scroll-behavior: smooth;
+}
+h2 {
+	color: orange;
+}
+ul {
+	color: purple;
+}
+body {
+	background-color: lightskyblue;
+	font-family: Segoe print;
+}
+.container{
+	margin: 50px 0 0 50px;
+}
+a {
+	color: teal;
+}
+img {
+	border: solid 10px hotpink;
+}
+button {
+	width: 10%;
+	height: 20px;
+	color: lightcyan;
+	background-color: darkslateblue;
+	border: solid black;
+	border-radius: 20px;
+}
+.input {
+	border: solid 2px darkblue;
+}
+.bottom{
+	margin: 50px 50px 50px 50px;
+	font-weight: bold;
+}
+.https {
+	width: 25%;
+}
+#lister{
+	color: darkslateblue;
+	font-style: !important;
+}
+.dark, .light {
+	width: 100px;
+	height: 100px;
+	border: none;
+}
+.dark {
+	background-color: black;
+}
+.light {
+	background-color: white;
+}
+#checkers {
+	background-color: brown;
+}
+.facebook {
+	background-color: blue;
+}
+.Oga_Sabinus {
+	text-align: center;
+}
