@@ -28,6 +28,10 @@ button {
 	border: solid black;
 	border-radius: 20px;
 }
+textarea {
+	width: 10%;
+	height: 40px;
+}
 .input {
 	border: solid 2px darkblue;
 }
