@@ -12,13 +12,14 @@ body {
 	font-family: Segoe print;
 }
 .container{
-	margin: 50px 0 0 50px;
+	margin: 50px 50px 50px 50px;
 }
 a {
 	color: teal;
 }
 img {
 	border: solid 10px hotpink;
+	justify-self: center;
 }
 button {
 	width: 10%;
@@ -31,11 +32,6 @@ button {
 textarea {
 	width: 10%;
 	height: 40px;
-}
-img {
-	display: grid;
-	grid-template-columns: auto auto;
-	grid-template-rows: auto auto;
 }
 .input {
 	border: solid 2px darkblue;
@@ -67,6 +63,8 @@ img {
 }
 .facebook {
 	background-color: blue;
+	border: solid 3px black;
+	border-radius: 20px;
 }
 .Oga_Sabinus {
 	text-align: center;
@@ -74,11 +72,4 @@ img {
 .i_am, .i_love {
 	display: grid;
 	grid-template-columns: 50% 50%;
-}
-@media (max-width: 480px) {
-	img {
-		justify-self: center;
-		grid-template-columns: auto auto auto auto;
-		grid-template-rows: auto;
-	}
 }
