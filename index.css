@@ -32,6 +32,11 @@ textarea {
 	width: 10%;
 	height: 40px;
 }
+img {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto;
+}
 .input {
 	border: solid 2px darkblue;
 }
@@ -65,4 +70,15 @@ textarea {
 }
 .Oga_Sabinus {
 	text-align: center;
+}
+.i_am, .i_love {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+@media (max-width: 480px) {
+	img {
+		justify-self: center;
+		grid-template-columns: auto auto auto auto;
+		grid-template-rows: auto;
+	}
 }
