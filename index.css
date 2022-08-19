@@ -1,8 +1,12 @@
 html {
 	scroll-behavior: smooth;
 }
+h1 {
+	font-size: ;
+}
 h2 {
 	color: orange;
+	font-size: ;
 }
 ul {
 	color: purple;
@@ -69,7 +73,9 @@ textarea {
 .Oga_Sabinus {
 	text-align: center;
 }
-.i_am, .i_love {
+.i_am, .i_love, .better {
 	display: grid;
 	grid-template-columns: 50% 50%;
+	grid-row-gap: 20px;
+	font-size: px;
 }
