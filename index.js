@@ -1,5 +1,5 @@
 //selecting html elements
-let inputElement = document.querySelector("#input")
+let emailElement = document.querySelector("#input")
 console.log(emailElement)
 console.log("hello world")
 
