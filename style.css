@@ -70,6 +70,7 @@ nav {
 
 nav img {
     height: 70px;
+    pointer-events: none;
 }
 
 nav h1 {
