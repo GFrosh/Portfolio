@@ -287,7 +287,9 @@ section#skills {
 .about-content img {
     width: 100%;
     border-radius: 1.5rem;
+    filter: brightness(0.5);
     box-shadow: 0 0 20px rgba(0,212,255, 0.25);
+    pointer-events: none;
     transition: transform var(--transition);
 }
 
