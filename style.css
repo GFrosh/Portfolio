@@ -125,7 +125,7 @@ header:hover {
 header.slide-in {
     opacity: 1;
     background: rgba(0,0,0,0.35);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(18px);
 }
 
 nav {
