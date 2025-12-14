@@ -129,3 +129,54 @@ b2topBtn.addEventListener("click", () => {
 const year = document.getElementById("year");
 const currentYear = new Date();
 year.innerText = currentYear.getFullYear();
+
+
+
+
+// EMAIL FUNCTIONALITY
+document.addEventListener("DOMContentLoaded", () => {
+
+    emailjs.init("BCYdhJo5NDDlO0ZyG");
+
+    const contactForm = document.getElementById("contact-form");
+
+    contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Freeze values immediately
+        const name = contactForm.name.value.trim();
+        const email = contactForm.email.value.trim();
+        const message = contactForm.message.value.trim();
+
+        if (!name || !email || !message) {
+            alert("Fill all fields.");
+            return;
+        }
+
+        if (!email.includes("@")) {
+            alert("Invalid email.");
+            return;
+        }
+
+        // Lock the form to prevent double-submit
+        contactForm.querySelector("button").disabled = true;
+
+        emailjs.send("service_8lcm1hs", "template_gl0kb58", {
+            name,
+            email,
+            message
+        })
+        .then(() => {
+            alert("Message sent successfully.");
+            contactForm.reset();
+        })
+        .catch(err => {
+            console.error(err);
+            alert("Failed to send message.");
+        })
+        .finally(() => {
+            contactForm.querySelector("button").disabled = false;
+        });
+    });
+
+});
