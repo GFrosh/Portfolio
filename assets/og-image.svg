@@ -1,5 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#0b1a1f"/>
-  <text x="80" y="220" font-size="56" fill="#00d4ff" font-family="Arial, Helvetica, sans-serif">Gideon Onyegbula</text>
-  <text x="80" y="300" font-size="36" fill="#ffffff" font-family="Arial, Helvetica, sans-serif">Fullstack developer — smooth, accessible web apps</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Gideon Onyegbula portfolio preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#020b14"/>
+      <stop offset="55%" stop-color="#071a2e"/>
+      <stop offset="100%" stop-color="#01040a"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.82" cy="0.18" r="0.65">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.35"/>
+      <stop offset="65%" stop-color="#00d4ff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#66f6ff"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#00d4ff" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#halo)"/>
+
+  <g opacity="0.22" stroke="#1c3b58" stroke-width="1">
+    <path d="M0 120h1200"/>
+    <path d="M0 250h1200"/>
+    <path d="M0 380h1200"/>
+    <path d="M0 510h1200"/>
+    <path d="M180 0v630"/>
+    <path d="M360 0v630"/>
+    <path d="M540 0v630"/>
+    <path d="M720 0v630"/>
+    <path d="M900 0v630"/>
+    <path d="M1080 0v630"/>
+  </g>
+
+  <g transform="translate(790 126)">
+    <rect x="0" y="0" width="290" height="378" rx="44" fill="#061525" stroke="#124061" stroke-width="2"/>
+    <g filter="url(#glow)" fill="none" stroke="url(#accent)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M212 115a84 84 0 1 0 0 148" stroke-width="18"/>
+      <path d="M146 189h84" stroke-width="18"/>
+      <path d="M161 153l69 36-69 36" stroke-width="12"/>
+    </g>
+    <circle cx="220" cy="189" r="8" fill="#ccfbff"/>
+  </g>
+
+  <text x="84" y="176" fill="#7ceeff" font-size="26" font-family="Segoe UI, Arial, sans-serif" letter-spacing="4">PORTFOLIO</text>
+  <text x="84" y="264" fill="#f1fbff" font-size="76" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Gideon Onyegbula</text>
+  <text x="84" y="330" fill="#c7e8f5" font-size="34" font-family="Segoe UI, Arial, sans-serif">Fullstack Developer</text>
+  <text x="84" y="384" fill="#9fc8da" font-size="30" font-family="Segoe UI, Arial, sans-serif">Building smooth, accessible web apps</text>
+
+  <rect x="84" y="438" width="432" height="56" rx="28" fill="#041321" stroke="#11618a"/>
+  <text x="112" y="476" fill="#6defff" font-size="27" font-family="Segoe UI, Arial, sans-serif">github.com/gfrosh</text>
 </svg>

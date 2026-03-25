@@ -6,37 +6,68 @@
     <meta name="theme-color" content="#00d4ff">
     <title>Gideon Onyegbula | Web Developer</title>
     <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-        <meta name="description" content="Gideon Onyegbula Ndubuisi — Fullstack developer building smooth, accessible web apps. See projects, skills, and contact details.">
-        <meta name="author" content="Gideon Onyegbula">
-        <link rel="canonical" href="/">
-        <meta name="robots" content="index, follow">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <meta name="description" content="Gideon Onyegbula Ndubuisi — Fullstack developer building smooth, accessible web apps. See projects, skills, and contact details.">
+    <meta name="author" content="Gideon Onyegbula">
+    <link rel="canonical" href="https://gfrosh.github.io/Portfolio/">
+    <meta name="robots" content="index, follow">
 
-        <!-- Open Graph -->
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Gideon Onyegbula | Web Developer">
-        <meta property="og:description" content="Fullstack developer building smooth, accessible web apps. See projects, skills, and contact details.">
-        <meta property="og:url" content="/">
-        <meta property="og:image" content="assets/og-image.svg">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gideon Onyegbula | Web Developer">
+    <meta property="og:description" content="Fullstack developer building smooth, accessible web apps. See projects, skills, and contact details.">
+    <meta property="og:url" content="https://gfrosh.github.io/Portfolio/">
+    <meta property="og:image" content="https://gfrosh.github.io/Portfolio/assets/og-image.png">
+    <meta property="og:image:alt" content="Gideon Onyegbula portfolio preview card">
 
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Gideon Onyegbula | Web Developer">
-        <meta name="twitter:description" content="Fullstack developer building smooth, accessible web apps. See projects, skills, and contact details.">
-        <meta name="twitter:image" content="assets/og-image.svg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gideon Onyegbula | Web Developer">
+    <meta name="twitter:description" content="Fullstack developer building smooth, accessible web apps. See projects, skills, and contact details.">
+    <meta name="twitter:image" content="https://gfrosh.github.io/Portfolio/assets/og-image.png">
+    <meta name="twitter:image:alt" content="Gideon Onyegbula portfolio preview card">
 
-        <!-- Structured data (update the url fields to your production URL) -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Gideon Onyegbula",
-            "jobTitle": "Fullstack Developer",
-            "description": "Fullstack developer building smooth, accessible web apps.",
-            "image": "assets/portrait.jpg",
-            "sameAs": ["https://github.com/gfrosh"]
-        }
-        </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "https://gfrosh.github.io/Portfolio/#person",
+                "name": "Gideon Onyegbula",
+                "jobTitle": "Fullstack Developer",
+                "description": "Fullstack developer building smooth, accessible web apps.",
+                "url": "https://gfrosh.github.io/Portfolio/",
+                "image": "https://gfrosh.github.io/Portfolio/assets/portrait.jpg",
+                "sameAs": [
+                    "https://github.com/gfrosh",
+                    "https://ng.linkedin.com/in/gideon-onyegbula-38b510380"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://gfrosh.github.io/Portfolio/#website",
+                "url": "https://gfrosh.github.io/Portfolio/",
+                "name": "Gideon Onyegbula Portfolio",
+                "inLanguage": "en"
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://gfrosh.github.io/Portfolio/#webpage",
+                "url": "https://gfrosh.github.io/Portfolio/",
+                "name": "Gideon Onyegbula | Web Developer",
+                "isPartOf": {
+                    "@id": "https://gfrosh.github.io/Portfolio/#website"
+                },
+                "about": {
+                    "@id": "https://gfrosh.github.io/Portfolio/#person"
+                },
+                "description": "Fullstack developer building smooth, accessible web apps. See projects, skills, and contact details."
+            }
+        ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
@@ -66,7 +97,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="#contact">
                     Hire Me
                 </a>
             </li>
@@ -81,7 +112,7 @@
 
     <header>
         <nav>
-            <h1 class="logo">Gideon<span>.</span></h1>
+            <div class="logo">Gideon<span>.</span></div>
             <ion-icon name="menu" class="hamburger"></ion-icon>
             <ul class="nav-links">
                 <li>
@@ -105,7 +136,7 @@
 
     <section id="hero">
         <div class="hero-text">
-            <h2>Hi, I'm <span>Gideon</span></h2>
+            <h1>Hi, I'm <span>Gideon</span></h1>
             <p>
                 A passionate fullstack developer crafting smooth, captivating designs.
             </p>
@@ -217,7 +248,7 @@
                         <h3>English Dictionary App</h3>
                         <p>A Node.js Powered Dictionary App that runs locally, supporting offline lookups and smoth transitions. Built with Express and SQLite.</p>
                     </div>
-                    <a href="#" class="btn project-btn">View Project</a>
+                    <a href="https://github.com/gfrosh?tab=repositories" class="btn project-btn" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
                 <div class="project-card">
                     <img src="assets/project1.png" alt="A screenshot of project1 App">
@@ -225,7 +256,7 @@
                         <h3>English Dictionary App</h3>
                         <p>A Node.js powered dictionary app that runs locally, supporting offline lookups and smooth transitions. Built with Express and SQLite.</p>
                     </div>
-                    <a href="#" class="btn project-btn">View Project</a>
+                    <a href="https://github.com/gfrosh?tab=repositories" class="btn project-btn" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
                 <div class="project-card">
                     <img src="assets/project1.png" alt="A screenshot of project1 App">
@@ -233,7 +264,7 @@
                         <h3>English Dictionary App</h3>
                         <p>A Node.js powered dictionary app that runs locally, supporting offline lookups and smooth transitions. Built with Express and SQLite.</p>
                     </div>
-                    <a href="#" class="btn project-btn">View Project</a>
+                    <a href="https://github.com/gfrosh?tab=repositories" class="btn project-btn" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
                 <div class="project-card">
                     <img src="assets/project1.png" alt="A screenshot of project1 App">
@@ -241,7 +272,7 @@
                         <h3>English Dictionary App</h3>
                         <p>A Node.js powered dictionary app that runs locally, supporting offline lookups and smooth transitions. Built with Express and SQLite.</p>
                     </div>
-                    <a href="#" class="btn project-btn">View Project</a>
+                    <a href="https://github.com/gfrosh?tab=repositories" class="btn project-btn" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
                 <div class="project-card">
                     <img src="assets/project1.png" alt="A screenshot of project1 App">
@@ -249,7 +280,7 @@
                         <h3>English Dictionary App</h3>
                         <p>A Node.js powered dictionary app that runs locally, supporting offline lookups and smooth transitions. Built with Express and SQLite.</p>
                     </div>
-                    <a href="#" class="btn project-btn">View Project</a>
+                    <a href="https://github.com/gfrosh?tab=repositories" class="btn project-btn" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
                 <div class="project-card">
                     <img src="assets/project1.png" alt="A screenshot of project1 App">
@@ -257,7 +288,7 @@
                         <h3>English Dictionary App</h3>
                         <p>A Node.js powered dictionary app that runs locally, supporting offline lookups and smooth transitions. Built with Express and SQLite.</p>
                     </div>
-                    <a href="#" class="btn project-btn">View Project</a>
+                    <a href="https://github.com/gfrosh?tab=repositories" class="btn project-btn" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
                 <div class="project-card">
                     <img src="assets/project1.png" alt="A screenshot of project1 App">
@@ -265,7 +296,7 @@
                         <h3>English Dictionary App</h3>
                         <p>A Node.js powered dictionary app that runs locally, supporting offline lookups and smooth transitions. Built with Express and SQLite.</p>
                     </div>
-                    <a href="#" class="btn project-btn">View Project</a>
+                    <a href="https://github.com/gfrosh?tab=repositories" class="btn project-btn" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
             </div>
         </div>
@@ -296,18 +327,18 @@
                     <ion-icon name="logo-whatsapp"></ion-icon>
                 </a>
                 <a href="https://github.com/gfrosh" target="_blank" rel="noopener noreferrer">
-                    <ion-icon name="logo-github"></ion-icon>
+                    <i class="devicon-github-original"></i>
                 </a>
                 <a href="mailto:gigi.onyegbula.2007@gmail.com" target="_blank" rel="noopener noreferrer">
                     <ion-icon name="mail-open-outline"></ion-icon>
                 </a>
-                <a href="" target="_blank" rel="noopener noreferrer">
+                <a href="https://ng.linkedin.com/in/gideon-onyegbula-38b510380" target="_blank" rel="noopener noreferrer">
                     <ion-icon name="logo-linkedin"></ion-icon>
                 </a>
-                <a href="" target="_blank" rel="noopener noreferrer">
-                    <ion-icon name="logo-twitter"></ion-icon>
+                <a href="https://x.com/gfrosh" target="_blank" rel="noopener noreferrer" aria-label="X profile">
+                    <i class="devicon-twitter-original"></i>
                 </a>
-                <a href="" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/codeaddict_404/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
                     <ion-icon name="logo-instagram"></ion-icon>
                 </a>
             </div>
