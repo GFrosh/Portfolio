@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gfrosh.github.io/Portfolio/sitemap.xml
+Sitemap: https://devgideon.me/sitemap.xml
