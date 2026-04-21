@@ -336,7 +336,7 @@ section#skills {
     color: var(--skill-color, var(--electric-blue));
 }
 
-.skill--uiux { --skill-color: #ff4f8b; }
+.skill--ui-ux { --skill-color: #ff4f8b; }
 .skill--react { --skill-color: #61dafb; }
 .skill--node { --skill-color: #68a063; }
 .skill--python { --skill-color: #ffd43b; }
