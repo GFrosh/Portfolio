@@ -93,12 +93,10 @@ const sidebar = document.querySelector('aside');
 const closeBtn = document.querySelector(".close-nav");
 
 hamburger.addEventListener("click", () => {
-    console.log("Navbar Toggled!");
     sidebar.classList.add("active");
 });
 
 closeBtn.addEventListener("click", () => {
-    console.log("Navbar Toggled!");
     sidebar.classList.remove("active");
 });
 
