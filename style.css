@@ -424,6 +424,7 @@ section#skills {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    min-height: 50vh;
 }
 
 .contact-text {
@@ -464,7 +465,7 @@ section#skills {
 .social-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.4rem;
     justify-content: center;
     text-align: center;
     margin-top: 1rem;
@@ -560,6 +561,9 @@ footer p a:hover {
     .skills-grid {
         grid-template-columns: repeat(auto-fit, 
     minmax(275px, 1fr));
+    }
+    .social-links {
+        gap: 0.7rem;
     }
 }
 
