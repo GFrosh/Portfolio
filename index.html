@@ -7,7 +7,6 @@
     <title>Gideon Onyegbula | Fullstack Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/assets/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png">
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <meta name="description" content="Gideon Onyegbula Ndubuisi — Fullstack developer building smooth, accessible web apps. See projects, skills, and contact details.">
@@ -34,6 +33,255 @@
     {
         "@context": "https://schema.org",
         "@graph": [
+            {
+                "@type": "Person",
+                "@id": "https://devgideon.me/#person",
+                "name": "Gideon Onyegbula",
+                "jobTitle": "Fullstack Developer",
+                "description": "Fullstack developer building smooth, accessible web apps.",
+                "url": "https://devgideon.me/",
+                "image": "https://devgideon.me/assets/portrait.jpg",
+                "sameAs": [
+                    "https://github.com/gfrosh",
+                    "https://ng.linkedin.com/in/gideon-onyegbula-38b510380"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://devgideon.me/#website",
+                "url": "https://devgideon.me/",
+                "name": "Gideon Onyegbula Portfolio",
+                "inLanguage": "en"
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://devgideon.me/#webpage",
+                "url": "https://devgideon.me/",
+                "name": "Gideon Onyegbula | Fullstack Developer",
+                "isPartOf": {
+                    "@id": "https://devgideon.me/#website"
+                },
+                "about": {
+                    "@id": "https://devgideon.me/#person"
+                },
+                "description": "Fullstack developer building smooth, accessible web apps. See projects, skills, and contact details."
+            }
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <aside>
+        <ion-icon name="close" class="close-nav"></ion-icon>
+
+        <div class="logo">
+            GIDEON
+        </div>
+        
+        <ul class="sidebar">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact">Hire Me</a></li>
+        </ul>
+    </aside>
+
+
+
+    <header>
+        <nav>
+            <div class="logo">Gideon<span>.</span></div>
+            <ion-icon name="menu" class="hamburger"></ion-icon>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-text">
+            <h1>
+                Hi, I'm <span>Gideon</span>
+            </h1>
+            <p>
+                A passionate developer crafting smooth applications with captivating designs.
+            </p>
+            <div class="hero-nav">
+                <a href="#contact" class="btn">Hire Me</a>
+                <a href="#about" class="btn">Know Me</a>
+                <a href="#projects" class="btn">My Works</a>
+            </div>
+        </div>
+        <canvas id="particles"></canvas>
+    </section>
+
+    <section id="about" class="other-sections">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm <strong>Gideon</strong>, a full-stack developer focused on building clean, reliable web experiences that feel effortless to use.
+                    </p>
+                    <p>
+                        I enjoy turning ideas into practical products, from polished interfaces to solid backend logic, while continuously learning and refining my craft.
+                    </p>
+                    <a href="#projects" class="btn">See My Projects</a>
+                </div>
+
+                <div class="about-image">
+                    <img src="assets/portrait.jpg" alt="A Portrait of Gideon Onyegbula">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="skills" class="other-sections">
+        <div class="container">
+            <h2 class="section-title">
+                Skills & Technologies
+            </h2>
+            <div class="skills-grid">
+                <div class="skill skill--ui-ux">
+                    <ion-icon name="logo-dribbble"></ion-icon>
+                    <h3 class="skill-text">UI/UX</h3>
+                </div>
+                <div class="skill skill--react">
+                    <ion-icon name="logo-react"></ion-icon>
+                    <h3 class="skill-text">REACT</h3>
+                </div>
+                <div class="skill skill--node">
+                    <ion-icon name="logo-nodejs"></ion-icon>
+                    <h3 class="skill-text">NodeJS</h3>
+                </div>
+                <div class="skill skill--python">
+                    <ion-icon name="logo-python"></ion-icon>
+                    <h3 class="skill-text">PYTHON</h3>
+                </div>
+                <div class="skill skill--figma">
+                    <ion-icon name="logo-figma"></ion-icon>
+                    <h3 class="skill-text">FIGMA</h3>
+                </div>
+                <div class="skill skill--git">
+                    <ion-icon name="git-branch-outline"></ion-icon>
+                    <h3 class="skill-text">GIT</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="projects" class="other-sections">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="assets/project1.png" alt="A screenshot of the English Dictionary App">
+                    <div class="project-info">
+                        <h3>English Dictionary App</h3>
+                        <p>A Node.js powered dictionary app that runs locally, supporting offline lookups and smooth transitions. Built with Express and SQLite.</p>
+                    </div>
+                    <a href="https://github.com/gfrosh?tab=repositories" class="btn project-btn" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+                <div class="project-card">
+                    <img src="assets/og-image.svg" alt="A screenshot of the Naija Chronoscope project">
+                    <div class="project-info">
+                        <h3>Naija-Chronoscope</h3>
+                        <p>A vanilla HTML/CSS/JS blog covering African and global news, history, and culture from a Nigerian perspective.</p>
+                    </div>
+                    <a href="https://naijachronoscope.com" class="btn project-btn" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+                <div class="project-card">
+                    <img src="assets/project1.png" alt="WhatsApp Chatbot project screenshot">
+                    <div class="project-info">
+                        <h3>WhatsApp AI Chatbot</h3>
+                        <p>A WhatsApp chatbot built with Node.js and the Claude API, capable of handling conversations and responding intelligently to user queries.</p>
+                    </div>
+                    <a href="https://github.com/gfrosh?tab=repositories" class="btn project-btn" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="section contact-section other-sections">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p>
+                        Got a project idea, collaboration offer, or a coding riddle to share? Reach out — I'd love to hear from you.
+                    </p>
+                    <p>You can contact me directly via the form below or through my socials.</p>
+                </div>
+
+                <form class="contact-form" id="contact-form">
+                    <input type="text" name="name" id="name" placeholder="Your Name" required>
+                    <input type="email" name="email" id="email" placeholder="Your Email" required>
+                    <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="social-links">
+                <a href="https://wa.me/+2348137960057" class="social-link social-link--whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                </a>
+                <a href="https://github.com/gfrosh" class="social-link social-link--github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="devicon-github-original"></i>
+                </a>
+                <a href="mailto:gigi.onyegbula.2007@gmail.com" class="social-link social-link--mail" aria-label="Email">
+                    <ion-icon name="mail-open-outline"></ion-icon>
+                </a>
+                <a href="https://ng.linkedin.com/in/gideon-onyegbula-38b510380" class="social-link social-link--linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+                <a href="https://x.com/DevThragg" class="social-link social-link--x" target="_blank" rel="noopener noreferrer" aria-label="X profile">
+                    <i class="devicon-twitter-original"></i>
+                </a>
+                <a href="https://www.instagram.com/codeaddict_404/" class="social-link social-link--instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>
+            &copy; <span id="year"></span> Gideon. All Rights Reserved.
+        </p>
+        <p id="privacy-policy">
+            <a href="privacy.html">Privacy Policy</a>
+        </p>
+        <p id="terms-of-service">
+            <a href="terms.html">Terms Of Service</a>
+        </p>
+    </footer>
+
+    <div class="back-to-top" role="button" aria-label="Back to top">
+        <ion-icon name="arrow-up-circle-outline"></ion-icon>
+    </div>
+
+    
+    <script src="./script.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
             {
                 "@type": "Person",
                 "@id": "https://devgideon.me/#person",
