@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Structura",
+    "description": "The diagram tool that's not a text editor and not a drag-and-drop mess. Build UML and ER diagrams through a clean structured UI. Powered by Node.js.",
+    "html_url": "https://github.com/GFrosh/Structura",
+    "homepage": "https://structura-mm00.onrender.com",
+    "language": "TypeScript",
+    "topics": ["diagram-editor", "electron", "nodejs", "plantuml", "typescript", "uml", "webapp"],
+    "stargazers_count": 5,
+    "image": "https://res.cloudinary.com/dkvtqbj4p/image/upload/v1778164688/Screenshot_2026-05-07_153737_wjtd1h.png",
+    "imageAlt": "Preview of Structura",
+    "featured": true
+  },
+  {
+    "name": "Portfolio-Projects-CMS",
+    "description": "A Content Management System for managing projects that appear on your portfolio, any frontend you choose.",
+    "html_url": "https://github.com/GFrosh/Portfolio-Projects-CMS",
+    "homepage": "https://portfolio-projects-cms.vercel.app",
+    "language": "TypeScript",
+    "topics": ["cms", "collaborate", "contribution", "github-copilot", "portfolio", "typescript"],
+    "stargazers_count": 1,
+    "image": "https://res.cloudinary.com/dkvtqbj4p/image/upload/v1775670957/Project_Management_System_e3eteq.png",
+    "imageAlt": "Preview of Portfolio Projects CMS",
+    "featured": true
+  },
+  {
+    "name": "Rate-Limiter",
+    "description": "A lightweight, pluggable rate limiting middleware for Express — built on the Sliding Window algorithm.",
+    "html_url": "https://github.com/GFrosh/Rate-Limiter",
+    "homepage": "https://rate-limiter-2h3f.onrender.com",
+    "language": "JavaScript",
+    "topics": ["nodejs", "open-source", "rate-limiting"],
+    "stargazers_count": 0,
+    "image": "https://opengraph.githubassets.com/1/GFrosh/Rate-Limiter",
+    "imageAlt": "Preview of Rate Limiter",
+    "featured": true
+  },
+  {
+    "name": "Expense-Tracker",
+    "description": ":moneybag: :chart_with_upwards_trend: A simple and intuitive expense tracker app to manage daily spending, visualize budgets, and monitor financial habits.",
+    "html_url": "https://github.com/GFrosh/Expense-Tracker",
+    "homepage": "https://expense-tracker-nine-roan-47.vercel.app",
+    "language": "JavaScript",
+    "topics": [],
+    "stargazers_count": 1,
+    "image": "https://opengraph.githubassets.com/1/GFrosh/Expense-Tracker",
+    "imageAlt": "Preview of Expense Tracker",
+    "featured": true
+  },
+  {
+    "name": "Chess-Engine",
+    "description": "This repo showcases concepts like polymorphism, inheritance, encapsulation and abstraction in OOP using TypeScript.",
+    "html_url": "https://github.com/GFrosh/Chess-Engine",
+    "homepage": "",
+    "language": "TypeScript",
+    "topics": ["chess-engine", "learn", "oop-principles", "typescript"],
+    "stargazers_count": 1,
+    "image": "https://opengraph.githubassets.com/1/GFrosh/Chess-Engine",
+    "imageAlt": "Preview of Chess Engine",
+    "featured": true
+  },
+  {
+    "name": "Mini-User-Dashboard",
+    "description": "A tiny project to master my TSX",
+    "html_url": "https://github.com/GFrosh/Mini-User-Dashboard",
+    "homepage": "https://mini-user-dashboard-tau.vercel.app",
+    "language": "TypeScript",
+    "topics": [],
+    "stargazers_count": 0,
+    "image": "https://res.cloudinary.com/dkvtqbj4p/image/upload/v1777762009/Screenshot_2026-05-02_154445_mxthd6.png",
+    "imageAlt": "Preview of Mini User Dashboard",
+    "featured": true
+  }
+]
