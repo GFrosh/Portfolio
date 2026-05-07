@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const projectsGrid = document.getElementById("projects-grid");
+const projectsToggle = document.getElementById("projects-toggle");
 
 const techIconMap = {
     "JavaScript": "devicon-javascript-plain",
@@ -109,12 +110,14 @@ function createProjectCard(repo) {
     const liveUrl = repo.homepage || repo.html_url;
     const liveLabel = repo.homepage ? 'Live' : 'Repo';
     const projectSlug = slugifyProjectName(repo.name);
+    const imageUrl = repo.image || getProjectImage(repo);
+    const imageAlt = repo.imageAlt || `Preview of ${repo.name}`;
 
     return `
         <div class="project-card flip-card" data-project-slug="${projectSlug}">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="${getProjectImage(repo)}" alt="Preview of ${repo.name}">
+                    <img src="${imageUrl}" alt="${imageAlt}">
                     <div class="project-info">
                         <h3>${repo.name}</h3>
                         <p>${normalizeDescription(repo)}</p>
@@ -157,6 +160,27 @@ function attachProjectFlipHandlers() {
     });
 }
 
+function updateProjectVisibility() {
+    if (!projectsGrid || !projectsToggle) {
+        return;
+    }
+
+    const shouldCollapse = projectsGrid.classList.contains('is-collapsed');
+    projectsToggle.textContent = shouldCollapse ? 'Show More' : 'Show Less';
+    projectsToggle.setAttribute('aria-expanded', String(!shouldCollapse));
+}
+
+function attachProjectsToggle() {
+    if (!projectsGrid || !projectsToggle) {
+        return;
+    }
+
+    projectsToggle.addEventListener('click', () => {
+        projectsGrid.classList.toggle('is-collapsed');
+        updateProjectVisibility();
+    });
+}
+
 async function loadProjects() {
     if (!projectsGrid) {
         return;
@@ -172,9 +196,14 @@ async function loadProjects() {
         const featuredProjects = projects.filter((project) => project.featured !== false).slice(0, 6);
 
         projectsGrid.innerHTML = featuredProjects.map(createProjectCard).join('');
+        projectsGrid.classList.add('is-collapsed');
+        updateProjectVisibility();
     } catch (error) {
         console.error('Failed to load projects.json', error);
         projectsGrid.innerHTML = '<p class="projects-loading">Projects could not be loaded right now.</p>';
+        if (projectsToggle) {
+            projectsToggle.hidden = true;
+        }
     }
 }
 
@@ -240,6 +269,7 @@ initParticles();
 animate();
 
 attachProjectFlipHandlers();
+attachProjectsToggle();
 loadProjects();
 
 

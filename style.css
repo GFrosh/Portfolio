@@ -361,6 +361,20 @@ section#skills {
     margin: 0 auto;
 }
 
+.projects-grid.is-collapsed .flip-card:nth-child(n + 4) {
+    display: none;
+}
+
+.projects-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.75rem;
+}
+
+.projects-toggle {
+    min-width: 180px;
+}
+
 .project-card {
     background: #111;
     border-radius: 1rem;
