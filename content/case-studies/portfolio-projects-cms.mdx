@@ -1,0 +1,28 @@
+## Problem
+
+Keeping a portfolio's project list current is tedious when the projects are hard-coded into the frontend. Every new project means editing components, and the frontend and the content are the same codebase, so the two can never be updated independently.
+
+Portfolio-Projects-CMS separates them: a CMS owns the project records, and any frontend that can consume them can render them.
+
+## Key technical decision, and the trade-off
+
+**Decision:** make the frontend **fully decoupled** — the CMS exposes project data, and the site reads it rather than owning it. Content lives in one place; the presentation layer becomes replaceable.
+
+**Why:** it is the difference between "my portfolio is a React app I edit" and "my portfolio is a view over my content". The second one lets you swap frontends — or render the same projects in two places — without touching the data.
+
+**The trade-off:** an extra moving part. A hard-coded list has no failure modes; a CMS-backed list can be down, can return stale content, and needs a caching story. For a portfolio the mitigation is straightforward — cache the response at build time and fall back to the last good payload — but the complexity is real and worth naming rather than hiding.
+
+## Architecture
+
+<ArchitectureDiagram />
+
+## Result
+
+[PLACEHOLDER: measured result for Portfolio-Projects-CMS — e.g. "used to manage N projects", "reduced a new-project publish to one form submission" — not measured, not claimed]
+
+## What I'd do next
+
+- Add authentication with per-user project scoping so the CMS can host more than one portfolio.
+- Generate the frontend's content types from the CMS schema, so the two cannot drift.
+- Add revalidation hooks so a published change reaches the live site without a full rebuild.
+- [PLACEHOLDER: what you would actually build next on Portfolio-Projects-CMS]

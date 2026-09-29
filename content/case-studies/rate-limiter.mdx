@@ -1,0 +1,59 @@
+## Problem
+
+Express apps need per-client request throttling, but the obvious implementation — a counter that resets every N seconds — has a well-known flaw: a client can fire a full window's worth of requests at 00:09 and another full window at 00:11, doubling the intended rate across a two-second span and hammering whatever sits behind the middleware.
+
+I wanted something I could drop into any Express app with one line, that behaved predictably under that boundary case, and that did not drag a Redis dependency into a project that did not need one.
+
+## Key technical decision, and the trade-off
+
+**Decision:** implement a **sliding window** backed by an in-memory `Map`, and define the store as a two-method interface (`get` / `set`).
+
+Each key holds the exact timestamps of its recent requests. On every call the limiter prunes anything older than `windowMs`, then either records the new timestamp or rejects:
+
+```js
+const cutoff = now - windowMs;
+const timestamps = (buckets.get(key) ?? []).filter((t) => t > cutoff);
+
+if (timestamps.length >= maxRequests) {
+  const retryAfterMs = timestamps[0] + windowMs - now;
+  return reject(retryAfterMs); // oldest request decides when capacity returns
+}
+
+timestamps.push(now);
+```
+
+**Why not fixed window:** it is simpler and cheaper, but it permits the boundary burst described above. For a portfolio API guarding an endpoint that calls an external service, that burst is exactly the failure mode worth avoiding.
+
+**Why not token bucket:** buckets smooth bursty traffic well, but they also allow a legitimate burst up to the bucket size, which makes the limit harder to explain to a client reading `X-RateLimit-Remaining`. Sliding window gives an exact, honest number.
+
+**The trade-off, stated plainly:** sliding window stores *n* timestamps per key instead of one integer. Memory per active key grows with `maxRequests` — so it is O(limit) per client rather than O(1). For a per-IP limiter with a limit in the tens, that is a few hundred bytes per active client and entirely acceptable. For a limit of 10,000 requests per window it would not be, and a counter-based algorithm would be the right call.
+
+The other trade-off is process locality: an in-memory `Map` is per-instance. Behind multiple Node processes the effective limit multiplies by the number of instances. That is why `store` is an injectable interface — swapping in Redis is a one-object change and does not touch the middleware:
+
+```js
+const redisStore = {
+  get: (key) => redis.get(key).then((v) => (v ? JSON.parse(v) : undefined)),
+  set: (key, value) => redis.set(key, JSON.stringify(value)),
+};
+```
+
+## Architecture
+
+<ArchitectureDiagram />
+
+<Callout title="Note">
+The store boundary is the whole design. Everything above it — pruning, counting, rejecting, headers — is algorithm. Everything below it is storage. That separation is what makes the Redis swap a config change rather than a rewrite.
+</Callout>
+
+## Result
+
+[PLACEHOLDER: measured result for Rate-Limiter — e.g. "held a steady 5 req/10s under a 200 req/s k6 load test", or "used in production on X" — I have not measured this and will not invent a number]
+
+The demo visualiser shows the sliding window moving in real time against incoming requests, which is the clearest way to see the pruning behaviour:
+
+## What I'd do next
+
+- Publish to npm — the package currently has to be cloned, which is the biggest barrier to anyone actually using it.
+- Add the token-bucket and fixed-window algorithms behind the same config surface, so the trade-offs above become a one-line choice.
+- Ship a Redis store in-repo, plus a test suite that pins the boundary behaviour (the burst case at 00:09/00:11) as a regression test.
+- Add `X-RateLimit-Reset` in both seconds and milliseconds with a documented convention — the current ms-only value trips people up.

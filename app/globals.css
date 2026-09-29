@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens. Dark, electric-blue identity — but tuned for 2026 legibility:
+   body text sits at ~13:1 contrast on the base background (WCAG AAA).
+--------------------------------------------------------------------------- */
+@theme {
+  --color-bg: #05070d;
+  --color-bg-soft: #080c17;
+  --color-surface: #0c1322;
+  --color-surface-2: #111a2e;
+  --color-line: #1e2a45;
+  --color-fg: #e9eefb;
+  --color-muted: #a3b3d1;
+  --color-primary: #22d3ee;
+  --color-primary-soft: #7dd3fc;
+  --color-accent: #3b82f6;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-orbitron), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 16px;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Sticky header height + breathing room for in-page anchors. */
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+  }
+
+  /* Visible focus ring on every interactive element. */
+  :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-primary) 35%, transparent);
+    color: #fff;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Utilities / primitives
+--------------------------------------------------------------------------- */
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 100;
+    padding: 0.75rem 1.1rem;
+    border-radius: 10px;
+    background: var(--color-primary);
+    color: #04121a;
+    font-weight: 600;
+    transition: top 150ms var(--ease-out-soft);
+  }
+  .skip-link:focus {
+    top: 1rem;
+  }
+
+  .card-surface {
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--color-surface-2) 55%, transparent), transparent),
+      var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+  }
+
+  .hairline {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--color-primary) 45%, transparent),
+      transparent
+    );
+    height: 1px;
+  }
+
+  /* Long-form case study typography (no extra dependency needed). */
+  .mdx {
+    color: var(--color-muted);
+    line-height: 1.75;
+    font-size: 1.0125rem;
+  }
+  .mdx > * + * {
+    margin-top: 1.05rem;
+  }
+  .mdx h2 {
+    color: var(--color-fg);
+    font-size: 1.35rem;
+    margin-top: 2.6rem;
+    margin-bottom: 0.35rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-line);
+  }
+  .mdx h3 {
+    color: var(--color-fg);
+    font-size: 1.075rem;
+    margin-top: 1.8rem;
+  }
+  .mdx strong {
+    color: var(--color-fg);
+    font-weight: 600;
+  }
+  .mdx a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .mdx ul,
+  .mdx ol {
+    padding-left: 1.25rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .mdx ul {
+    list-style: disc;
+  }
+  .mdx ol {
+    list-style: decimal;
+  }
+  .mdx code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.875em;
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-line);
+    border-radius: 6px;
+    padding: 0.12em 0.4em;
+    color: var(--color-primary-soft);
+  }
+  .mdx pre {
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-line);
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    overflow-x: auto;
+  }
+  .mdx pre code {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    color: var(--color-fg);
+  }
+  .mdx blockquote {
+    border-left: 2px solid var(--color-primary);
+    padding-left: 1rem;
+    color: var(--color-muted);
+  }
+  .mdx img {
+    border-radius: 12px;
+    border: 1px solid var(--color-line);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Motion — everything is opt-in and fully disabled under reduced motion.
+--------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
