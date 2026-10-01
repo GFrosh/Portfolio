@@ -1,5 +1,6 @@
 import { site } from "@/content/site";
 import { Reveal } from "@/components/reveal";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 const CURRENTLY_LABELS = ["Building", "Learning", "Open to"] as const;
@@ -21,9 +22,9 @@ export function About() {
         <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:items-start">
           <Reveal className="min-w-0">
             <div className="space-y-4 text-base leading-relaxed text-muted sm:text-lg">
-              {site.about.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 24)}>{paragraph}</p>
-              ))}
+                <p key={site.about.paragraphs[1].slice(0, 24)}>
+                  {site.about.paragraphs[1]}
+                </p>
             </div>
           </Reveal>
 
@@ -45,9 +46,10 @@ export function About() {
         <Reveal delay={0.08} className="mt-8">
           <Link
             href="/about"
-            className="inline-flex items-center rounded-lg border border-line px-3.5 py-2 text-sm text-fg transition-colors hover:border-primary/50 hover:text-primary"
+            className="inline-flex items-center gap-2 rounded-lg border border-line px-3.5 py-2 text-sm text-fg transition-colors hover:border-primary/50 hover:text-primary"
           >
             Read more about me
+            <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
           </Link>
         </Reveal>
       </div>

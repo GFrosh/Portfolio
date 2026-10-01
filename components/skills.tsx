@@ -1,5 +1,6 @@
 import { skillGroups } from "@/content/skills";
 import { Reveal } from "@/components/reveal";
+import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
@@ -48,9 +49,10 @@ export function Skills() {
         <Reveal delay={0.08} className="mt-8">
           <Link
             href="/skills"
-            className="inline-flex items-center rounded-lg border border-line px-3.5 py-2 text-sm text-fg transition-colors hover:border-primary/50 hover:text-primary"
+            className="inline-flex items-center gap-2 rounded-lg border border-line px-3.5 py-2 text-sm text-fg transition-colors hover:border-primary/50 hover:text-primary"
           >
             Explore the full skills map
+            <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
           </Link>
         </Reveal>
       </div>

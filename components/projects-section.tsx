@@ -1,7 +1,7 @@
 import { featuredProjects } from "@/content/projects";
 import { ProjectCard } from "@/components/project-card";
 import { Reveal } from "@/components/reveal";
-import { Callout } from "@/components/mdx/callout";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export function ProjectsSection() {
@@ -28,9 +28,10 @@ export function ProjectsSection() {
         <Reveal delay={0.08} className="mt-8">
           <Link
             href="/projects"
-            className="inline-flex items-center rounded-lg border border-line px-3.5 py-2 text-sm text-fg transition-colors hover:border-primary/50 hover:text-primary"
+            className="inline-flex items-center gap-2 rounded-lg border border-line px-3.5 py-2 text-sm text-fg transition-colors hover:border-primary/50 hover:text-primary"
           >
             Explore the full project directory
+            <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
           </Link>
         </Reveal>
       </div>
