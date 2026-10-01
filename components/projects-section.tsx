@@ -2,6 +2,7 @@ import { featuredProjects } from "@/content/projects";
 import { ProjectCard } from "@/components/project-card";
 import { Reveal } from "@/components/reveal";
 import { Callout } from "@/components/mdx/callout";
+import Link from "next/link";
 
 export function ProjectsSection() {
   return (
@@ -24,17 +25,13 @@ export function ProjectsSection() {
           ))}
         </div>
 
-        <Reveal delay={0.1} className="mt-8">
-          <div className="max-w-3xl">
-            <Callout title="Placeholder">
-              <p>
-                <strong>[PLACEHOLDER: Naija Chronoscope, if live, put it first]</strong> — add it as
-                the first entry in <code>content/projects.ts</code> and create{" "}
-                <code>content/case-studies/naija-chronoscope.mdx</code>. The case-study route
-                generates automatically from the data file.
-              </p>
-            </Callout>
-          </div>
+        <Reveal delay={0.08} className="mt-8">
+          <Link
+            href="/projects"
+            className="inline-flex items-center rounded-lg border border-line px-3.5 py-2 text-sm text-fg transition-colors hover:border-primary/50 hover:text-primary"
+          >
+            Explore the full project directory
+          </Link>
         </Reveal>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import { skillGroups } from "@/content/skills";
 import { Reveal } from "@/components/reveal";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export function Skills() {
   return (
@@ -43,6 +44,15 @@ export function Skills() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.08} className="mt-8">
+          <Link
+            href="/skills"
+            className="inline-flex items-center rounded-lg border border-line px-3.5 py-2 text-sm text-fg transition-colors hover:border-primary/50 hover:text-primary"
+          >
+            Explore the full skills map
+          </Link>
+        </Reveal>
       </div>
     </section>
   );

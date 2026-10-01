@@ -1,0 +1,28 @@
+## The problem
+
+Naija Chronoscope started as a vanilla HTML/CSS/JS blog about Nigerian history, culture and news. It needed to become a real publishing platform: an editorial workflow, searchable archives, media handling and a newsletter, all maintained by one person.
+
+## What I built
+
+- **Custom article editor.** A single-textarea Write/Preview editor with a slash-command picker, table blocks and a floating media tray. AI-assisted formatting is built into the editor flow.
+- **Media library.** Admins can search and reuse previously uploaded Cloudinary media instead of re-uploading it.
+- **Full-text search.** Postgres `tsvector` with a stored generated column and a GIN index, exposed through a debounced live-search dropdown.
+- **Research pipeline.** A daily Vercel cron ingests items from RSS feeds and stores them under a separate `research` status, outside the publishing flow.
+- **Newsletter and feeds.** Weekly subscriber broadcasts through Resend batches, plus global and per-category RSS feeds.
+- **Auth and SEO.** Edge middleware protecting `/admin/*`, user-enumeration-safe login flows, generated metadata, a sitemap and Search Console submission.
+
+## Technical decisions
+
+**Signed Cloudinary uploads.** Large video uploads were failing with a 413 when they passed through the app server. Moving to a signed direct-to-Cloudinary upload removed the file from the request path entirely.
+
+**Many-to-many media.** A single `article_id` column on the media table couldn't express reuse, so I migrated to an `article_media` join table: backfilled it, verified it, then dropped the old column.
+
+**Rehydrating draft media by URL.** Client-side media ids regenerate every session, so matching by id broke drafts. I match on the media URL, which is durable, then rewrite the article's media markers to the fresh ids.
+
+## Result
+
+[PLACEHOLDER: a real measurement, e.g. articles published, monthly readers, or an honest "launched, growing". Do not invent a number.]
+
+## What I'd do next
+
+[PLACEHOLDER: your real next steps. Draft candidates: an admin trash view with scheduled purging, and advertising once readership justifies it.]

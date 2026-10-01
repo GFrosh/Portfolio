@@ -42,7 +42,7 @@ export default function PrivacyPage() {
             message you have sent me.
           </p>
           <p className="text-sm">
-            Last reviewed: <span>[PLACEHOLDER: date you last reviewed this privacy note]</span>
+            Last reviewed: <span>01/10/2026</span>
           </p>
         </div>
       </div>

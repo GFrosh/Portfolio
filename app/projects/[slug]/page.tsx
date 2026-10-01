@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, GitBranch, TriangleAlert } from "lucide-react";
 import { compileMDX } from "next-mdx-remote/rsc";
-import { featuredProjects, getProject } from "@/content/projects";
+import { projects, getProject } from "@/content/projects";
 import { getCaseStudySource } from "@/lib/mdx";
 import { mdxComponents } from "@/components/mdx/mdx-components";
 import { Reveal } from "@/components/reveal";
@@ -12,7 +12,7 @@ import { Reveal } from "@/components/reveal";
 type Params = { slug: string };
 
 export function generateStaticParams(): Params[] {
-  return featuredProjects.map((project) => ({ slug: project.slug }));
+  return projects.map((project) => ({ slug: project.slug }));
 }
 
 export async function generateMetadata({
@@ -51,7 +51,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
       <div className="shell">
         <Reveal>
           <Link
-            href="/#projects"
+            href="/projects"
             className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-primary"
           >
             <ArrowLeft aria-hidden="true" className="h-4 w-4" />

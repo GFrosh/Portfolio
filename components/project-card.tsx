@@ -118,9 +118,9 @@ export function ProjectCard({ project, className }: { project: Project; classNam
                 Live demo
               </a>
               {project.freeTierHost ? (
-                <p className="mt-2 inline-flex items-center gap-2 text-xs text-muted">
-                  <TriangleAlert aria-hidden="true" className="h-3.5 w-3.5 text-primary" />
-                  Free-tier host, first load may take ~30s.
+                <p className="mt-2 text-xs text-muted" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <TriangleAlert aria-hidden="true" className="text-primary" style={{ width: '14px', height: '14px', flexShrink: 0 }} />
+                  <span>Free-tier host, first load may take ~30s.</span>
                 </p>
               ) : null}
             </div>

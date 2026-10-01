@@ -1,5 +1,6 @@
 import { site } from "@/content/site";
 import { Reveal } from "@/components/reveal";
+import Link from "next/link";
 
 const CURRENTLY_LABELS = ["Building", "Learning", "Open to"] as const;
 
@@ -40,6 +41,15 @@ export function About() {
             </div>
           </Reveal>
         </div>
+
+        <Reveal delay={0.08} className="mt-8">
+          <Link
+            href="/about"
+            className="inline-flex items-center rounded-lg border border-line px-3.5 py-2 text-sm text-fg transition-colors hover:border-primary/50 hover:text-primary"
+          >
+            Read more about me
+          </Link>
+        </Reveal>
       </div>
     </section>
   );

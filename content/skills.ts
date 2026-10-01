@@ -1,6 +1,6 @@
 export type Skill = {
   name: string;
-  /** Renders the chip with extra weight/colour. Used for TypeScript. */
+  /** Optional extra weight/colour for a chip. Currently unused. */
   emphasis?: boolean;
 };
 
@@ -12,14 +12,20 @@ export type SkillGroup = {
 };
 
 /**
- * Only what Gideon actually listed. TypeScript is first and emphasised.
+ * Only skills Gideon would defend in an interview.
+ * Every language and platform gets equal visual weight.
  */
 export const skillGroups: SkillGroup[] = [
   {
     id: "languages",
     title: "Languages",
     caption: "Day-to-day typing and reasoning about code.",
-    skills: [{ name: "TypeScript", emphasis: true }, { name: "JavaScript" }, { name: "Python" }],
+    skills: [
+      { name: "TypeScript" },
+      { name: "JavaScript" },
+      { name: "Python" },
+      { name: "Dart" },
+    ],
   },
   {
     id: "frontend",
@@ -34,6 +40,12 @@ export const skillGroups: SkillGroup[] = [
     skills: [{ name: "Node.js" }, { name: "Express" }, { name: "Django" }, { name: "REST APIs" }],
   },
   {
+    id: "mobile-desktop",
+    title: "Mobile & desktop",
+    caption: "Apps that live outside the browser tab.",
+    skills: [{ name: "React Native" }, { name: "Flutter" }, { name: "Electron" }],
+  },
+  {
     id: "data-infra",
     title: "Data & infra",
     caption: "Persistence and packaging.",
@@ -43,7 +55,11 @@ export const skillGroups: SkillGroup[] = [
     id: "ai",
     title: "AI & integrations",
     caption: "Third-party APIs wired into real products.",
-    skills: [{ name: "Claude API" }, { name: "WhatsApp Business API" }],
+    skills: [
+      { name: "Claude API" },
+      { name: "WhatsApp Business API" },
+      { name: "Google AI Studio" },
+    ],
   },
   {
     id: "tools",

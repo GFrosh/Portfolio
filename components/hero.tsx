@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Download, TriangleAlert } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { site } from "@/content/site";
 import { resume, socialLinks } from "@/content/links";
 import { HeroCanvas } from "@/components/three/hero-canvas";
@@ -68,13 +68,6 @@ export function Hero() {
                   </li>
                 ))}
               </ul>
-            </Reveal>
-
-            <Reveal delay={0.24}>
-              <p className="mt-5 inline-flex items-center gap-2 text-xs text-muted">
-                <TriangleAlert aria-hidden="true" className="h-3.5 w-3.5 text-primary" />
-                {resume.placeholder}
-              </p>
             </Reveal>
           </div>
 

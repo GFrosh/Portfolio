@@ -1,4 +1,4 @@
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { socialLinks } from "@/content/links";
 import { ContactForm } from "@/components/contact-form";
 import { Reveal } from "@/components/reveal";
@@ -42,10 +42,6 @@ export function ContactSection() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-5 inline-flex items-center gap-2 text-xs text-muted">
-                <Mail aria-hidden="true" className="h-3.5 w-3.5 text-primary" />
-                hello@devgideon.me — [PLACEHOLDER: confirm this address exists]
-              </p>
             </div>
           </Reveal>
 

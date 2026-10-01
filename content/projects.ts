@@ -8,7 +8,8 @@ export type Project = {
   role: string;
   stack: string[];
   live?: string;
-  repo: string;
+  /** Omit for closed-source projects. */
+  repo?: string;
   /** Local, optimised screenshot. */
   image: string;
   imageAlt: string;
@@ -19,6 +20,7 @@ export type Project = {
   featured: boolean;
 };
 
+
 /**
  * Featured projects, in display order.
  * [PLACEHOLDER: Naija Chronoscope — add it above Structura if it is live.]
@@ -26,13 +28,29 @@ export type Project = {
  */
 export const projects: Project[] = [
   {
+    slug: "naija-chronoscope",
+    name: "Naija Chronoscope",
+    oneLiner:
+      "An independent Nigerian digital newsroom: a public news site and an editorial CMS, built and run solo.",
+    summary:
+      "A production news platform covering politics, security, business and culture, with an admin CMS for the full editorial workflow: a custom article editor, a reusable media library, Postgres full-text search, a daily RSS research pipeline and a weekly newsletter.",
+    role: "Sole developer and owner: architecture, frontend, backend, database, deployment and SEO.",
+    stack: ["TypeScript", "Next.js", "PostgreSQL", "Cloudinary", "Vercel"],
+    live: "https://naijachronoscope.com",
+    image: "/projects/naija-chronoscope.png",
+    imageAlt: "Naija Chronoscope's public homepage showing the latest stories",
+    imageWidth: 1600,
+    imageHeight: 900,
+    featured: true,
+  },
+  {
     slug: "structura",
     name: "Structura",
     oneLiner:
       "A diagram tool that is neither a text editor nor a drag-and-drop mess — you build UML and ER diagrams through a structured UI.",
     summary:
       "Build UML and ER diagrams through a clean, structured UI instead of hand-writing PlantUML or wrestling with a canvas. Powered by Node.js.",
-    role: "[PLACEHOLDER: your role on Structura — e.g. solo developer across design, frontend and backend]",
+    role: "Solo Developer",
     stack: ["TypeScript", "Node.js", "Electron", "PlantUML"],
     live: "https://structura-mm00.onrender.com",
     repo: "https://github.com/GFrosh/Structura",
@@ -50,7 +68,7 @@ export const projects: Project[] = [
       "A lightweight, pluggable rate limiting middleware for Express, built on the sliding-window algorithm.",
     summary:
       "Drop-in Express middleware with a sliding-window algorithm, a Map-based in-memory store, custom key resolvers and standards-shaped rate-limit headers.",
-    role: "[PLACEHOLDER: your role on Rate-Limiter — e.g. solo author and maintainer]",
+    role: "Solo Developer and maintainer",
     stack: ["JavaScript", "Node.js", "Express"],
     live: "https://rate-limiter-2h3f.onrender.com",
     repo: "https://github.com/GFrosh/Rate-Limiter",
@@ -68,7 +86,7 @@ export const projects: Project[] = [
       "A CMS for the projects on your portfolio, with any frontend you choose on top.",
     summary:
       "Manage the projects that appear on a portfolio site and expose them to whatever frontend you point at it.",
-    role: "[PLACEHOLDER: your role on Portfolio-Projects-CMS — e.g. solo developer]",
+    role: "Solo Author & Developer",
     stack: ["TypeScript", "Next.js", "CMS"],
     live: "https://portfolio-projects-cms.vercel.app",
     repo: "https://github.com/GFrosh/Portfolio-Projects-CMS",

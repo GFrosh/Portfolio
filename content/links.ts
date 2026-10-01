@@ -5,19 +5,16 @@ export type SocialLink = {
   href: string;
   handle?: string;
   icon: LucideIcon;
-  /** Present when the value still needs confirmation from Gideon. */
   placeholder?: string;
 };
 
-/** Order is deliberate: Email, LinkedIn, GitHub, WhatsApp. */
+
 export const socialLinks: SocialLink[] = [
   {
     label: "Email",
     href: "mailto:hello@devgideon.me",
     handle: "hello@devgideon.me",
-    icon: Mail,
-    placeholder:
-      "[PLACEHOLDER: confirm hello@devgideon.me exists, receives mail, and replaces the old Gmail address]",
+    icon: Mail
   },
   {
     label: "LinkedIn",
@@ -37,22 +34,27 @@ export const socialLinks: SocialLink[] = [
     handle: "+234 813 796 0057",
     icon: MessageCircle,
   },
+  {
+    label: "X",
+    href: "https://x.com/DevThragg",
+    handle: "@DevThragg",
+    icon: MessageCircle,
+  },
 ];
 
 /**
  * X is intentionally NOT rendered. Flip to true only once the handle is
  * confirmed active and dev-focused.
  */
-export const X_ENABLED = false;
+/* export const X_ENABLED = true;
 
 export const xLink = {
   label: "X",
   href: "https://x.com/DevThragg",
   handle: "@DevThragg",
-  placeholder:
-    "[PLACEHOLDER: confirm @DevThragg is active and dev-focused, then set X_ENABLED = true in content/links.ts — otherwise leave it off]",
+  icon: MessageCircle,
 };
-
+ */
 /** Résumé — file has not been supplied yet. */
 export const resume = {
   href: "/resume/gideon-onyegbula-resume.pdf",

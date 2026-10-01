@@ -1,12 +1,10 @@
 import Link from "next/link";
-import { socialLinks, xLink, X_ENABLED } from "@/content/links";
+import { socialLinks } from "@/content/links";
 import { site } from "@/content/site";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
-  const links = X_ENABLED
-    ? [...socialLinks, { label: xLink.label, href: xLink.href }]
-    : socialLinks.map(({ label, href }) => ({ label, href }));
+  const links = socialLinks.map(({ label, href }) => ({ label, href }));
 
   return (
     <footer className="border-t border-line">
